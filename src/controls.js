@@ -30,10 +30,10 @@ export function initControls() {
 
   // color input
   const colorInput = document.querySelector(".controls__color");
-  const { top, bottom, left, right } = colorInput.getBoundingClientRect();
-  const xScale = 360 / (right - left);
-  const yScale = 100 / (bottom - top);
   colorInput.addEventListener("click", e => {
+    const { top, bottom, left, right } = colorInput.getBoundingClientRect();
+    const xScale = 360 / (right - left);
+    const yScale = 100 / (bottom - top);
     const x = (e.clientX - left) * xScale;
     const y = (e.clientY - top) * yScale;
     state.colorSelect = `hsla(${x}, 100%, ${y}%, 1)`;
