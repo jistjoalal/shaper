@@ -16,21 +16,14 @@
     </header>
 
     <main>
-      <section>
-        <label>
-          Preview
-          <canvas id="preview"></canvas>
-        </label>
-
-        <label>
-          Width
-          <input type="number" id="width" min="0" />
-        </label>
-
-        <label>
-          Height
-          <input type="number" id="height" min="0" />
-        </label>
+      <section class="controls">
+        <div class="controls__size">
+          <input type="range" id="height" orient="vertical" min="0" max="200" />
+          <div class="controls__preview">
+            <canvas id="preview"></canvas>
+            <input type="range" id="width" min="0" max="200" />
+          </div>
+        </div>
 
         <label>
           Shape
