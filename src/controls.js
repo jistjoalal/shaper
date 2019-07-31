@@ -1,5 +1,5 @@
 import { state } from "./state.js";
-import { ctx } from "./canvas.js";
+import { canvas, ctx } from "./canvas.js";
 
 export function initControls() {
   // size input
@@ -29,5 +29,20 @@ export function initControls() {
   ctx.fillStyle = colorInput.value = state.colorSelect;
   colorInput.addEventListener("change", e => {
     state.colorSelect = e.target.value;
+  });
+
+  // clear button
+  const clearBtn = document.querySelector("#clear");
+  clearBtn.addEventListener("click", e => {
+    const { shapes } = state;
+    // clear shapes list
+    shapes.clear();
+    state.shapeCount = 0;
+    const shapeList = document.querySelectorAll("#shapes > li");
+    for (let shape of shapeList) {
+      shape.parentElement.removeChild(shape);
+    }
+    // clear canvas
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
   });
 }
