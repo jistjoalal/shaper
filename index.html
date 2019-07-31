@@ -6,6 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Shaper</title>
     <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
       canvas {
         width: 100%;
         border: 1px solid black;
@@ -13,13 +17,34 @@
       section {
         width: 75%;
         margin: 0 auto;
+        padding: 12px;
+      }
+      header {
+        background: #eee;
+      }
+      header > section {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      a {
+        text-decoration: none;
+        color: #333;
+      }
+      a:hover {
+        color: #000;
+        text-decoration: underline;
       }
     </style>
   </head>
   <body>
+    <header>
+      <section>
+        <h1><a href="/">Shaper<a></h1>
+        <a target="_blank" href="https://github.com/jistjoalal/shaper">GH</a>
+      </section>
+    </header>
     <section>
-      <h1>Shaper</h1>
-
       <label>
         Width
         <input type="number" id="width" min="0" />
