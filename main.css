@@ -48,6 +48,7 @@ canvas {
   justify-content: space-around;
   align-items: center;
 }
+/* Size Controls */
 .controls__size {
   display: flex;
 }
@@ -66,4 +67,38 @@ input[type="range"] {
 #height {
   writing-mode: bt-lr; /* IE */
   -webkit-appearance: slider-vertical; /* WebKit */
+}
+/* Shape Controls */
+.controls__shape {
+  display: flex;
+  flex-direction: column;
+}
+input.controls__shape__input {
+  display: fixed;
+  opacity: 0;
+  user-select: none;
+}
+input.controls__shape__input + label {
+  font-size: 3rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+input.controls__shape__input:not(:checked) + label > span {
+  color: black;
+}
+input.controls__shape__input:checked + label > span {
+  border-color: #666;
+}
+.shape {
+  display: block;
+  width: 20px;
+  height: 20px;
+  box-sizing: border-box;
+  border: 10px solid black;
+}
+.ellipse {
+  border-radius: 50%;
 }

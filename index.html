@@ -25,13 +25,16 @@
           </div>
         </div>
 
-        <label>
-          Shape
-          <select id="shape">
-            <option value="rect">Rect</option>
-            <option value="ellipse">Ellipse</option>
-          </select>
-        </label>
+        <div class="controls__shape">
+          <input type="radio" name="shape" class="controls__shape__input" id="rect" />
+          <label for="rect">
+            <span class="shape rect" />
+          </label>
+          <input type="radio" name="shape" class="controls__shape__input" id="ellipse" />
+          <label for="ellipse">
+            <span class="shape ellipse" />
+          </label>
+        </div>
 
         <label>
           Color

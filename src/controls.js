@@ -19,12 +19,21 @@ export function initControls() {
   });
 
   // shape input
-  const shapeInput = document.querySelector("#shape");
-  shapeInput.value = state.shapeSelect;
-  shapeInput.addEventListener("change", e => {
-    state.shapeSelect = e.target.value;
-    previewShape();
-  });
+  // const shapeInput = document.querySelector("#shape");
+  // shapeInput.value = state.shapeSelect;
+  // shapeInput.addEventListener("change", e => {
+  //   state.shapeSelect = e.target.value;
+  //   previewShape();
+  // });
+
+  const s = document.getElementsByName("shape");
+  s[0].checked = true;
+  for (let shape of s) {
+    shape.addEventListener("change", e => {
+      state.shapeSelect = e.target.id;
+      previewShape();
+    });
+  }
 
   // color input
   const colorInput = document.querySelector("#color");
