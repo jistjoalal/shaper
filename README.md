@@ -24,7 +24,6 @@ git branch -D gh-pages
 
 ## todos + ideas
 
-- better UI for controls
 - better UI for remove btns
 - styles
 - different shapes?

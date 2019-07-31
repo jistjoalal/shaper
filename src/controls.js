@@ -43,6 +43,7 @@ export function initControls() {
   // clear button
   const clearBtn = document.querySelector("#clear");
   clearBtn.addEventListener("click", e => {
+    if (!confirm("Clear the canvas?")) return;
     const { shapes } = state;
     // clear shapes list
     shapes.clear();
