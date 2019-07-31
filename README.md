@@ -30,4 +30,3 @@ git branch -D gh-pages
 - different shapes?
 - save to storage?
 - click-drag to move shapes?
-- deploy
