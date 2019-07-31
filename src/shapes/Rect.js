@@ -14,7 +14,12 @@ export class Rect extends Shape {
     ];
   }
   draw(ctx) {
-    ctx.fillStyle = this.color;
-    ctx.fillRect(...this.specs);
+    if (this.highlight) {
+      ctx.strokeStyle = "red";
+      ctx.strokeRect(...this.specs);
+    } else {
+      ctx.fillStyle = this.color;
+      ctx.fillRect(...this.specs);
+    }
   }
 }

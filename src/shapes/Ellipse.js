@@ -18,9 +18,14 @@ export class Ellipse extends Shape {
   }
   draw(ctx) {
     ctx.beginPath();
-    ctx.fillStyle = this.color;
     ctx.ellipse(...this.specs);
-    ctx.fill();
+    if (this.highlight) {
+      ctx.strokeStyle = "red";
+      ctx.stroke();
+    } else {
+      ctx.fillStyle = this.color;
+      ctx.fill();
+    }
     ctx.closePath();
   }
 }

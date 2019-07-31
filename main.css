@@ -113,7 +113,7 @@ input.controls__shape__input:checked + label > span {
 .ellipse {
   border-radius: 50%;
 }
-/* Color */
+/* Color Controls */
 .controls__color__hue {
   z-index: -1;
   position: relative;
@@ -142,4 +142,20 @@ input.controls__shape__input:checked + label > span {
     rgba(0, 0, 0, 0),
     rgba(255, 255, 255, 1)
   );
+}
+/* Shape List */
+#shapes {
+  display: flex;
+  flex-wrap: wrap;
+}
+#shapes > li {
+  list-style-type: none;
+}
+.shapes__preview {
+  width: 50px;
+  height: 50px;
+  margin: 4px;
+}
+.shapes__preview:hover {
+  border: 1px solid red;
 }
