@@ -2,12 +2,13 @@ import { state } from "../state.js";
 import { removeShape } from "./index.js";
 
 export class Shape {
-  constructor() {
+  constructor({ draw }) {
     const { colorSelect, shapes, shapeCount } = state;
     this.color = colorSelect;
-    this.id = shapeCount;
+    if (!draw) return;
 
     // add to state
+    this.id = shapeCount;
     shapes.set(this.id, this);
     state.shapeCount++;
 

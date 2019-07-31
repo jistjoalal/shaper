@@ -1,10 +1,10 @@
 import { state } from "../state.js";
-import { ctx } from "../canvas.js";
 import { Shape } from "./Shape.js";
 
 export class Ellipse extends Shape {
-  constructor(mouseX, mouseY) {
-    super();
+  constructor(props) {
+    super(props);
+    const { mouseX, mouseY } = props;
     const { shapeWidth, shapeHeight } = state;
     this.specs = [
       mouseX,
@@ -16,7 +16,7 @@ export class Ellipse extends Shape {
       2 * Math.PI
     ];
   }
-  draw() {
+  draw(ctx) {
     ctx.beginPath();
     ctx.fillStyle = this.color;
     ctx.ellipse(...this.specs);

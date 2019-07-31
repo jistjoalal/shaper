@@ -1,6 +1,6 @@
 import { createShape } from "./shapes/index.js";
 
-export const canvas = document.querySelector("canvas");
+export const canvas = document.querySelector("#main");
 export const ctx = canvas.getContext("2d");
 
 export function initCanvas() {

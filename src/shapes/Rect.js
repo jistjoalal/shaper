@@ -1,10 +1,10 @@
 import { state } from "../state.js";
-import { ctx } from "../canvas.js";
 import { Shape } from "./Shape.js";
 
 export class Rect extends Shape {
-  constructor(mouseX, mouseY) {
-    super();
+  constructor(props) {
+    super(props);
+    const { mouseX, mouseY } = props;
     const { shapeWidth, shapeHeight } = state;
     this.specs = [
       mouseX - shapeWidth / 2,
@@ -13,7 +13,7 @@ export class Rect extends Shape {
       shapeHeight
     ];
   }
-  draw() {
+  draw(ctx) {
     ctx.fillStyle = this.color;
     ctx.fillRect(...this.specs);
   }

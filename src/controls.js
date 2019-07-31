@@ -1,27 +1,29 @@
 import { state } from "./state.js";
 import { canvas, ctx } from "./canvas.js";
+import { previewShape } from "./preview.js";
 
 export function initControls() {
   // size input
   const widthInput = document.querySelector("#width");
   widthInput.value = state.shapeWidth;
-  widthInput.addEventListener(
-    "change",
-    e => (state.shapeWidth = e.target.value)
-  );
+  widthInput.addEventListener("change", e => {
+    state.shapeWidth = e.target.value;
+    previewShape();
+  });
 
   const heightInput = document.querySelector("#height");
   heightInput.value = state.shapeHeight;
-  heightInput.addEventListener(
-    "change",
-    e => (state.shapeHeight = e.target.value)
-  );
+  heightInput.addEventListener("change", e => {
+    state.shapeHeight = e.target.value;
+    previewShape();
+  });
 
   // shape input
   const shapeInput = document.querySelector("#shape");
   shapeInput.value = state.shapeSelect;
   shapeInput.addEventListener("change", e => {
     state.shapeSelect = e.target.value;
+    previewShape();
   });
 
   // color input
@@ -29,6 +31,7 @@ export function initControls() {
   ctx.fillStyle = colorInput.value = state.colorSelect;
   colorInput.addEventListener("change", e => {
     state.colorSelect = e.target.value;
+    previewShape();
   });
 
   // clear button

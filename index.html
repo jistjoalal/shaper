@@ -14,44 +14,58 @@
         <a target="_blank" href="https://github.com/jistjoalal/shaper">GH</a>
       </section>
     </header>
-    <section>
-      <label>
-        Width
-        <input type="number" id="width" min="0" />
-      </label>
-      <label>
-        Height
-        <input type="number" id="height" min="0" />
-      </label>
-      <label>
-        Shape
-        <select id="shape">
-          <option value="rect">Rect</option>
-          <option value="ellipse">Ellipse</option>
-        </select>
-      </label>
 
-      <label>
-        Color
-        <select id="color">
-          <option value="red">Red</option>
-          <option value="orange">Orange</option>
-          <option value="yellow">Yellow</option>
-          <option value="green">Green</option>
-          <option value="blue">Blue</option>
-          <option value="purple">Purple</option>
-          <option value="brown">Brown</option>
-          <option value="black">Black</option>
-          <option value="white">White</option>
-        </select>
-      </label>
+    <main>
+      <section>
+        <label>
+          Preview
+          <canvas id="preview"></canvas>
+        </label>
 
-      <button id="clear">Clear</button>
+        <label>
+          Width
+          <input type="number" id="width" min="0" />
+        </label>
 
-      <canvas></canvas>
+        <label>
+          Height
+          <input type="number" id="height" min="0" />
+        </label>
 
-      <ul id="shapes"></ul>
-    </section>
+        <label>
+          Shape
+          <select id="shape">
+            <option value="rect">Rect</option>
+            <option value="ellipse">Ellipse</option>
+          </select>
+        </label>
+
+        <label>
+          Color
+          <select id="color">
+            <option value="red">Red</option>
+            <option value="orange">Orange</option>
+            <option value="yellow">Yellow</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+            <option value="purple">Purple</option>
+            <option value="brown">Brown</option>
+            <option value="black">Black</option>
+            <option value="white">White</option>
+          </select>
+        </label>
+
+        <button id="clear">Clear</button>
+      </section>
+
+      <section>
+        <canvas id="main"></canvas>
+      </section>
+
+      <section>
+        <ul id="shapes"></ul>
+      </section>
+    </main>
     <script src="main.js" type="module"></script>
   </body>
 </html>

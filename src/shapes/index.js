@@ -3,15 +3,17 @@ import { canvas, ctx } from "../canvas.js";
 import { Ellipse } from "./Ellipse.js";
 import { Rect } from "./Rect.js";
 
+export const SHAPE_TYPES = {
+  ellipse: Ellipse,
+  rect: Rect
+};
+
 export function createShape(mouseX, mouseY) {
   // draw shape
-  const Type = {
-    ellipse: Ellipse,
-    rect: Rect
-  }[state.shapeSelect];
+  const Type = SHAPE_TYPES[state.shapeSelect];
 
-  const shape = new Type(mouseX, mouseY);
-  shape.draw();
+  const shape = new Type({ mouseX, mouseY, draw: true });
+  shape.draw(ctx);
 }
 
 export function removeShape(id) {
@@ -27,7 +29,7 @@ export function removeShape(id) {
 
     // re-draw the rest
     for (let shape of shapes.values()) {
-      shape.draw();
+      shape.draw(ctx);
     }
   };
 }
