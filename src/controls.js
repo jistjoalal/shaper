@@ -19,13 +19,6 @@ export function initControls() {
   });
 
   // shape input
-  // const shapeInput = document.querySelector("#shape");
-  // shapeInput.value = state.shapeSelect;
-  // shapeInput.addEventListener("change", e => {
-  //   state.shapeSelect = e.target.value;
-  //   previewShape();
-  // });
-
   const s = document.getElementsByName("shape");
   s[0].checked = true;
   for (let shape of s) {
@@ -36,10 +29,14 @@ export function initControls() {
   }
 
   // color input
-  const colorInput = document.querySelector("#color");
-  ctx.fillStyle = colorInput.value = state.colorSelect;
-  colorInput.addEventListener("change", e => {
-    state.colorSelect = e.target.value;
+  const colorInput = document.querySelector(".controls__color");
+  const { top, bottom, left, right } = colorInput.getBoundingClientRect();
+  const xScale = 360 / (right - left);
+  const yScale = 100 / (bottom - top);
+  colorInput.addEventListener("click", e => {
+    const x = (e.clientX - left) * xScale;
+    const y = (e.clientY - top) * yScale;
+    state.colorSelect = `hsla(${x}, 100%, ${y}%, 1)`;
     previewShape();
   });
 
