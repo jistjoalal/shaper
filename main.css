@@ -6,17 +6,6 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 /* Generic Styles */
-h1 {
-  font-size: 2rem;
-}
-a {
-  text-decoration: none;
-  color: #333;
-}
-a:hover {
-  color: #000;
-  text-decoration: underline;
-}
 button {
   font-size: 1.5rem;
   padding: 8px;
@@ -37,11 +26,24 @@ section {
 /* Header */
 header {
   background: #eee;
+  margin-bottom: 12px;
 }
 header > section {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+h1 {
+  font-size: 3rem;
+  font-family: "Pacifico", cursive;
+  color: #111;
+}
+.gh {
+  fill: #000;
+}
+a:hover > .gh {
+  fill: #666;
+  text-decoration: underline;
 }
 /* Canvas */
 canvas {
@@ -83,11 +85,11 @@ input[type="range"] {
 .controls__shape {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
+  height: 5rem;
 }
 input.controls__shape__input {
-  display: fixed;
-  opacity: 0;
-  user-select: none;
+  display: none;
 }
 input.controls__shape__input + label {
   font-size: 3rem;
